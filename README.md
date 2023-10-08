@@ -2,6 +2,28 @@
 
 **tc-lexer** is a C++ interpreter for generating custom testcases based on a given template. It supports random integer and string generation.
 
+It can generate testcases like this:
+```
+4
+6
+110111
+3
+101
+7
+1001011
+2
+00
+```
+from this `binary_sample.tc` template:
+```
+$x set 4
+$y between 2 10
+$z between 0 2
+print x
+eol
+hold x
+x lines print y eol hold y y times print z
+```
 
 ## Features
 
