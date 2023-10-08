@@ -17,17 +17,17 @@ Navigate to the directory containing the executable open terminal
 
 Run the following command to grant necessary permission:
 
-```console
+```bash
 $ chmod u+x lexer
 ```
 
 ## Usage
 
-```console
+```bash
 $ ./lexer < [template]
 ```
 
-```console
+```bash
 $ ./lexer < [template] > [output]
 ```
 
