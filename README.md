@@ -80,9 +80,9 @@ $y reset
 print y space print 5 eol
 ```
 
-*Note : `print y` generates a new value for y*
-*Note : `space` prints exactly one space*
-*Note : `eol` prints moves cursor to next line*
+*Note : `print y` generates a new value for y*  
+*Note : `space` prints exactly one space*  
+*Note : `eol` prints moves cursor to next line*  
 
 #### For looping:
 To print value of variable x n times with a space in between
@@ -99,7 +99,7 @@ n times print x eol
 ```
 
 #### Hold
-*Accessing a variable generates new value for it. In order to get last generated value use* `hold` *keyword*
+Accessing a variable generates new value for it. In order to get last generated value use `hold` keyword
 
 ```
 $x between 5 10
@@ -108,4 +108,22 @@ $y between 0 x
 hold x
 x times print y space
 eol
+```
+
+#### Strings
+
+```
+$x randomstring
+$x between 5 10
+$x toggled
+print x
+eol
+```
+
+```
+$y randomstring
+$x length 7
+$x uppercase
+$y set 5
+y times print x eol
 ```
