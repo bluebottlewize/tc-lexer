@@ -1,6 +1,6 @@
 ## About
 
-**tc-lexer** is a C++ interpreter for generating custom testcases based on a given template. It supports random integer and string generation.
+**tc-lexer** testcase generator for programming questions and competitions. It uses a C++ parser and generates testcases based on a given template. It supports random integer and string generation.
 
 It can generate testcases like this:
 ```
@@ -82,7 +82,7 @@ print y space print 5 eol
 
 *Note : `print y` generates a new value for y*  
 *Note : `space` prints exactly one space*  
-*Note : `eol` prints moves cursor to next line*  
+*Note : `eol` moves cursor to next line*  
 
 #### For looping:
 To print value of variable x n times with a space in between
