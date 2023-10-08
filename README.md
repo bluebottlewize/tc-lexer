@@ -17,24 +17,28 @@ Navigate to the directory containing the executable open terminal
 
 Run the following command to grant necessary permission:
 
-```bash
+```console
 $ chmod u+x lexer
 ```
 
 ## Usage
 
-```bash
+```console
 $ ./lexer < [template]
 ```
 
-```bash
+```console
 $ ./lexer < [template] > [output]
 ```
 
 ## Template Documentation
 
+
 #### For declaring variables and adding modifiers:
-`$var_name [modifier]`
+
+```
+$var_name [modifier]
+```
 
 Exmaples:
 ```
