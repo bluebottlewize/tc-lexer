@@ -1,0 +1,5 @@
+$x between 1 10
+print x eol
+$y between 0 2
+x times print y next y
+eol

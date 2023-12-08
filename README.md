@@ -98,15 +98,14 @@ Or
 n times print x eol
 ```
 
-#### Hold
-Accessing a variable generates new value for it. In order to get last generated value use `hold` keyword
+#### Next
+To generate a new value for a variable, `next` keyword can be used
 
 ```
 $x between 5 10
-hold x
+print x eol
 $y between 0 x
-hold x
-x times print y space
+x times print y space next y
 eol
 ```
 

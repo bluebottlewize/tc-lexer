@@ -1,0 +1,5 @@
+$T between 1 10
+print T eol
+$N between 1 10
+$x between 0 2
+T lines print N eol N times print x next x next N
