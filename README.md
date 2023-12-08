@@ -14,15 +14,13 @@ It can generate testcases like this:
 2
 00
 ```
-from this `binary_sample.tc` template:
+from this `random-binary-string-testcases.tc` template:
 ```
-$x set 4
-$y between 2 10
-$z between 0 2
-print x
-eol
-hold x
-x lines print y eol hold y y times print z
+$T between 1 10
+print T eol
+$N between 1 10
+$x between 0 2
+T lines print N eol N times print x next x next N
 ```
 
 ## Features
