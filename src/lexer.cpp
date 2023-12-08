@@ -6,7 +6,7 @@ using namespace std;
 
 typedef long long int lint;
 
-set<string> keywords = { "space", "lines", "times" ,"print", "eol", "hold" };
+set<string> keywords = { "space", "lines", "times" ,"print", "eol", "hold" , "next" };
 set<string> modifiers = { "randomstring", "lowercase", "uppercase", "toggled", "increasing", "decreasing", "strictly", "prime", "binary", "random", "nonrepeating","reset", "current" };
 set<string> setters = { "between", "length", "set" };
 
@@ -96,8 +96,9 @@ class Variable
 	bool isLowerCase = true;
 	bool isToggled = false;
 	bool isSet = false;
-	bool current = false;
+	bool current = true;
 	bool isString = false;
+	bool generateNext = false;
 
 	lint count = 0;
 
@@ -109,21 +110,23 @@ class Variable
 	    {
 
 	    }
-	    else if (current)
-	    {
-		current = false;
-		value = history[count - 1];
-	    }
-	    else if (count == history.size())
+	    //else if (current)
+	    //{
+		//current = false;
+		//value = history[count - 1];
+	    //}
+	    //else if (count == history.size())
+	    else if (generateNext || history.size() == 0)
 	    {
 		++count;
 		value = to_string(newValue());
 		history.push_back(value);
+		generateNext = false;
 	    }
 	    else
 	    {
-		value = history[count];
-		++count;
+		value = history[count - 1];
+		//++count;
 	    }
 
 	    return stoll(value);
@@ -393,6 +396,27 @@ void eatKeyword(vector<Token>& tokens, void* ptr)
 	tokens.erase(tokens.begin());
 
 	cout << value;
+    }
+    else if (key_token.value == "next")
+    {
+	tokens.erase(tokens.begin());
+
+	Token t1 = *tokens.begin();
+	lint t1_value;
+	string value;
+
+	if (t1.type == "variable")
+	{
+	    Variable& t1_var = variables[t1.value];
+
+	    t1_var.generateNext = true;
+	}
+	else
+	{
+	    cout << "\nerror: " << t1.value << " is not compatible here" << endl;
+	}
+
+	tokens.erase(tokens.begin());
     }
     else if (key_token.value == "eol")
     {
